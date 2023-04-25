@@ -14,7 +14,8 @@ app.use(express.static(__dirname + '/public'));
 // Serve the index.html file
 app.get('/', (req, res) => {
   const images = [];
-  res.render('index', {images});
+  //TODO TEST AND PUSH
+  res.status(200).render('index', {images});
 });
 
 app.listen(PORT, () => {
@@ -32,6 +33,6 @@ app.get('/animals', (req, res) => {
     const images = files.filter(file => path.extname(file).toLowerCase() === '.jpg' || path.extname(file).toLowerCase() === '.png')
       .map(file => ({ src: path.join(folderPath, file) }));
   
-    res.render('index', { images });
+    res.status(200).render('index', { images });
   });
 });
