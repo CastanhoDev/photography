@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const PORT = process.env.PORT || 3000;
 
 const folderPath = 'path/to/folder'; 
 const app = express();
@@ -16,8 +17,8 @@ app.get('/', (req, res) => {
   res.render('index', {images});
 });
 
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+app.listen(PORT, () => {
+  console.log('Server listening on port '+PORT);
 });
 
 app.get('/animals', (req, res) => {
