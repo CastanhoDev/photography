@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Portfolio</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="sidebar">
+		<h1>My Portfolio</h1>
+		<ul class="filter-options">
+			<li><a href="">All</a></li>
+			<li><a href="/animals">Animals</a></li>
+			<li><a href="">Landscape</a></li>
+			<li><a href="">Portrait</a></li>
+			<li><a href="">Nature</a></li>
+			<li><a href="">City</a></li>
+		</ul>
+	</div>
+	<div class="overlay" onclick="closeImage()">
+		<div class="popup">
+		  <img id="popup-image">
+		</div>
+	  </div> 
+
+	
+	  <div  id="gallery">
+		<% images.forEach(function(image){ %><img src="<%= image.src.replace('\\', '/') %>" onclick="openImage('<%= image.src.replace(/\\/g, '/') %>')"		/>
+
+
+		<% }); %>
+	  </div>
+	  
+	<script src="script.js"></script>
+</body>
+</html>
